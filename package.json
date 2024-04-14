@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "build": "echo 'No build steps necessary'",
-    "style": "npx tailwindcss -i ./public/online/css/input.css -o ./public/online/css/tailwind.css --watch"
+    "tailwind": "npx tailwindcss -i ./public/online/css/input.css -o ./public/online/css/tailwind.css --watch",
+    "daisy": "npx tailwindcss -i ./public/online/css/input2.css -o ./public/online/css/daisyui.css --watch"
   },
   "keywords": [],
   "author": "kaito",

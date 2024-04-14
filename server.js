@@ -14,6 +14,7 @@ const adminPostRoutes = require('./routes/admin/postRoutes');
 
 const app = express();
 
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -27,6 +28,14 @@ app.use('/driver', driverPostRoutes);
 app.use('/admin', adminGetRoutes);
 app.use('/admin', adminPostRoutes);
 
+
+app.get('/', (req, res) => {
+    res.send('asd');
+});
+
+app.get('*', (req, res) => {
+    res.render('404');
+});
 
 
 const port = 3000;
