@@ -8,9 +8,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
     res.send('home');
 });
-  
+
 router.get('/login', (req, res) => {
-    res.send('login');
+    res.render('admin/login');
 });
 
 router.get('/dashboard', (req, res) => {

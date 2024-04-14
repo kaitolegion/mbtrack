@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/online/css/tailwind.css">
+    <link rel="icon" href="/images/favicon.svg">
+
+    <!-- <link rel="stylesheet" href="/online/css/daisyui.css"> -->
+    <title>Login | MBTrack</title>
+</head>
+<body>
+    <div class="h-screen md:flex">
+        <div
+            class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-900 to-purple-700 i justify-around items-center hidden">
+
+            <div>
+                <img src="/images/mbtrack-logo.jpg" class="h-20 w-20">
+                <h1 class="text-white font-bold text-4xl font-sans">MBTrack</h1>
+                <p class="text-white mt-1">Minibus Tracking System for passengers</p>
+                <button type="submit"
+                    class="block w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-bold mb-2">Read More</button>
+            </div>
+            <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8">
+            </div>
+            <div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8">
+            </div>
+            <div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+            <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+        </div>
+
+
+        <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
+
+            <form class="bg-white" method="POST">
+                <img src="/images/mbtrack-logo.jpg" class="mx-auto h-20 w-20 md:hidden">
+                <h1 class="text-gray-800 font-bold text-2xl mb-1 text-center">One-Time Password!</h1>
+                <p class="text-sm font-normal text-gray-600 mb-7">We have sent a code to your email </p>
+
+                <div class="flex">
+                    <input
+                        class="outline-none border-2 py-3 text-center w-12 rounded-2xl m-1 focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        maxlength="1" type="text" placeholder="" />
+                    <input
+                        class="outline-none border-2 text-center w-12 rounded-2xl m-1 focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        maxlength="1" type="text" placeholder="" />
+                    <input
+                        class="outline-none border-2 text-center w-12 rounded-2xl m-1 focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        maxlength="1" type="text" placeholder="" />
+                    <input
+                        class="outline-none border-2 text-center w-12 rounded-2xl m-1 focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        maxlength="1" type="text" placeholder="" />
+                    <input
+                        class="outline-none border-2 text-center w-12 rounded-2xl m-1 focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        maxlength="1" type="text" placeholder="" />
+                    <input
+                        class="outline-none border-2 text-center w-12 rounded-2xl m-1 focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        maxlength="1" type="text" placeholder="" />
+                </div>
+
+
+
+                <button type="submit"
+                    class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Submit</button>
+
+                <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer float-right mb-2"><a
+                        href="/app/forgot">Resend OTP?</a></span>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+<script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+</html>
