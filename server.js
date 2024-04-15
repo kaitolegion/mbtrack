@@ -7,12 +7,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const uuid = require('uuid');
-const cors = require("cors");
-const corsConfig = {
-    origin: "*",
-    credential: true,
-    methods: ["GET", "POST", "PUT", "DELETE",],
-}
+
+dotenv.config({ path: '.env' });
 
 
 const passengerGetRoutes = require('./routes/passenger/getRoutes');
@@ -25,18 +21,11 @@ const adminPostRoutes = require('./routes/admin/postRoutes');
 
 const app = express();
 
-app.options("", cors(corsConfig));
-app.use(cors(corsConfig));
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({ secret: "minibustrack", saveUninitialized: true, resave: true }));
-
-
-
 
 
 
