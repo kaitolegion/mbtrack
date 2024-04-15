@@ -1,0 +1,62 @@
+<!-- profile modal  -->
+<input type="checkbox" id="profile-modal" class="modal-toggle">
+<div class="modal">
+    <div class="modal-box relative">
+        <div class="modal-header flex-col items-left">
+            <h3 class="font-semibold text-lg absolute top-2 mt-1">Edit profile!</h3>
+            <label for="profile-modal" class="btn btn-circle btn-outline btn-sm absolute right-2 top-2 text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                    class="h-5 w-5">
+                    <path fill-rule="evenodd"
+                        d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </label>
+            <p class="text-sm py-3 mt-3">Details about your profile</p>
+        </div>
+        <hr />
+        <div class="">
+            <h3 class="font-semibold text-lg">Basic information</h3>
+            <div class="flex relative">
+                <div class="mt-5">
+                    <label class="font-semibold text-sm">Profile Photo</label>
+                    <p class="text-sm">Recommended 300 x 300</p>
+                    <div class="flex">
+                        <button class="btn btn-sm m-1">Change</button>
+                        <button class="btn btn-sm m-1">Remove</button>
+                    </div>
+                </div>
+                <div class="float-right ml-auto">
+                    <div class="rounded-full" style="width: 140px;">
+                        <img alt="Profile Picture" class="py-2 px-2" src="/images/profile.png" />
+                    </div>
+                </div>
+            </div>
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text">Name</span>
+                </div>
+                <input value="asd" type="text" placeholder="Name" class="input input-bordered w-full" />
+            </label>
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text">Email</span>
+                </div>
+                <input value="adasd" type="text" placeholder="Email address" class="input input-bordered w-full" />
+            </label>
+            <label class="form-control w-full mb-1">
+                <div class="label">
+                    <span class="label-text">Password</span>
+                </div>
+                <input value="adasd" type="password" placeholder="Password" class="input input-bordered w-full" />
+            </label>
+            <div class="flex float-right top-2">
+                <button class="btn btn-sm m-1">Cancel</button>
+                <button class="btn btn-sm m-1 bg-blue-500 text-white">Update</button>
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+
+<!-- end profile modal  -->

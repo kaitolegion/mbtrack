@@ -1,0 +1,12 @@
+.bg-white-smooth {
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .bg-white-smooth:hover {
+    background-color: #F1F5F9;
+  }
+
+  #map {
+    height: calc(100vh - 50px);
+  }

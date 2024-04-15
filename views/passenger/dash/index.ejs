@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/online/css/daisyui.css">
+    <link rel="stylesheet" href="/online/css/leaflet.css">
+    <link href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/online/js/leaflet.js">
+    <link rel="stylesheet" href="/local/css/styles.css">
+    <title>Dashboard | MBTrack</title>
+</head>
+<body>
+
+
+    <div class="drawer drawer-end">
+        <input id="notification-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+            <%- include('navigation') -%>
+        </div>
+
+
+        <%- include('map') -%>
+            <div class="drawer-side">
+                <label for="notification-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+
+                    <li><a>Sidebar Item 1</a></li>
+                    <li><a>Sidebar Item 2</a></li>
+                </ul>
+            </div>
+
+    </div>
+
+    <!-- <div class="drawer drawer-end">
+
+
+                <input id="notification-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+
+                    <label for="notification-drawer" class="drawer-button btn btn-primary">Open drawer</label>
+                </div>
+
+
+
+                <div class="drawer-side">
+                    <label for="notification-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                      
+                        <li><a>Sidebar Item 1</a></li>
+                        <li><a>Sidebar Item 2</a></li>
+                    </ul>
+                </div>
+
+
+            </div> -->
+
+
+
+    <!-- MODALs  -->
+    <%- include('modals/logout') -%>
+        <%- include('modals/search') -%>
+            <%- include('modals/profile') -%>
+                <%- include('modals/setting') -%>
+                    <!-- end MODALs  -->
+</body>
+
+<script src="https://unpkg.com/leaflet-rotate@0.2.8/dist/leaflet-rotate-src.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+<script src="https://unpkg.com/leaflet-rotatedmarker/dist/rotatedMarker.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.1/dist/alpine.min.js" defer></script>
+<script src="/local/js/map.js"></script>
+</html>

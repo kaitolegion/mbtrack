@@ -13,8 +13,8 @@ router.get('/otp/confirmation', (req, res) => {
     res.render('passenger/security/otp');
 });
 
-router.get('/login', (req, res) => {
-    res.render('passenger/login');
+router.get('/login', (req, res, next) => {
+    res.render('passenger/login', { errors: [], invalid: false, session: "" });
 });
 
 router.get('/register', (req, res) => {
@@ -26,7 +26,7 @@ router.get('/forgot', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-    res.send('dashboard');
+    res.render('passenger/dash/index');
 });
 
 module.exports = router;
