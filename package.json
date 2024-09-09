@@ -1,5 +1,5 @@
 {
-  "name": "mbtrack",
+  "name": "trackmon",
   "version": "1.0.0",
   "description": "MinibusTrack System",
   "main": "server.js",
