@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='robots' content='noindex, nofollow'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.4.2/dist/full.css" rel="stylesheet" type="text/css" />
+  <link href='https://rawcdn.githack.com/artkabis/Wordpress-Framework/7b66ebe1888162d501e3a9e28edee28277969ced/applications/localStoreMapBox.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet" />
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+     
+    .marker {
+        background-image: url(https://pavillons-galaxie.site-privilege.pagesjaunes.fr/wp-content/uploads/sites/3124/2020/11/homemap.png) !important;
+      filter:none !important;
+      background-repeat:no-repeat;
+      background-size : 28px;
+    }
+    .referer-warning {
+      display : none;
+    }
+    .closePopup{
+    cursor:pointer;
+    font-weight:bold;
+    position:absolute;
+    right:0;
+    top:0;
+    padding: 5px 20px;
+     color:#e01d1d;
+    font-size:2em;
+    
+    }
+    
+    .sidebar .heading {
+        background-color: rgb(235, 25, 24);
+    }
+    .sidebar .listings .item .title {
+        color: rgb(235, 25, 24);
+    }
+    .sidebar .listings .item.active .title, .sidebar .listings .item .title:hover {
+        color: #ff7777;
+    }
+    .listings .item.active {
+        background-color: #d6d6d6;
+    }
+    #menu input[type="radio"]:checked + .label {
+        border-color: #f77e7e;
+    }
+    #menu .radio .label:after {
+        background: #f77e7e;
+    }
+    .mapboxgl-popup-content h4 a:after{
+        background: #e01d1d;
+    }
+    html ::-webkit-scrollbar-thumb {
+        background: #850000;
+        border-radius: 0;
+    }
+    .mapboxgl-popup-content #modeleSelect {
+        background: #e24c4c;
+    }
+    #menu {
+        right: 50px!important;
+    }
+    .mapboxgl-marker svg{
+      display:none;
+    }
+    .mapBoxGL{
+      height:600px;
+    }
+    .marker {
+        filter: brightness(0.6) contrast(2.5) hue-rotate(-60deg);
+    }
+    
+    #mapBoxGL .sidebar {
+        height: 100%!important;
+    }
+    
+    @Media only screen and (max-width: 850px) {
+      #mapBoxGL .sidebar {
+          display : none !important ;
+      }
+      div#map {
+        position: absolute;
+        left:0;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+      }
+    }
+    #mapBoxGL .mapboxgl-popup-content {
+        width: 420px;
+    }
+    .mapboxgl-popup-content #modeleSelect {
+        text-align: center;
+    }
+        </style>
+  <title>Dashboard | Driver</title>
+</head>
+<body>
+    <div id="mapBoxGL">
+        <div id="menu">
+          <label for="streets-v11" class="radio">
+            <input type="radio" name="rtoggle" id="streets-v11" class="hidden"/>
+            <span class="label"></span>streets
+        </label>
+          <label for="light-v10" class="radio">
+            <input id="light-v10" type="radio" name="rtoggle" checked="checked"class="hidden" />
+            <span class="label"></span>light
+          </label>
+          <label for="dark-v10" class="radio">
+            <input id="dark-v10" type="radio" name="rtoggle" class="hidden" />
+              <span class="label"></span>dark
+          </label>
+          <label for="outdoors-v11" class="radio">
+            <input id="outdoors-v11" type="radio" name="rtoggle" checked="checked" class="hidden" />
+            <span class="label"></span>outdoors
+          </label>
+          <label for="satellite-v9" class="radio">
+            <input id="satellite-v9" type="radio" name="rtoggle" class="hidden" />
+            <span class="label"></span>satellite
+          </label>
+        </div>
+        <div class='sidebar'>
+          <div class='heading'><h1>History of PickUp Passengers</h1></div>
+          <div id='listings' class='listings'></div>
+        </div>
+        <div id='map' class='map'></div>
+        </div>
+        <script>
+         
+      $('#menu label:nth-child(4) input').trigger('click');//default layer Outdoors
+    
+    
+     const prefixUrl = "https://pavillons-galaxie.site-privilege.pagesjaunes.fr/wp-content/uploads/sites/10083/2023/06/";
+    
+    
+      const plans = {
+            aldebaran: prefixUrl+"modele-aldebaran-plan.jpg",
+            altair : prefixUrl+"modele-altair-plan.jpg",
+            andromede:prefixUrl+"modele-andromede-plan.jpg",
+            antares:prefixUrl+"modele-antares-plan.jpg",
+            aries:prefixUrl+"modele-aries-plan.jpg",
+            capella: prefixUrl+"modele-capella-plan.jpg",
+            jupiter: prefixUrl+"modele-jupiter-plan.jpg",
+            lune: prefixUrl+"modele-lune-plan.jpg",
+            mars: prefixUrl+"modele-mars-plan.jpg",
+            neptune: prefixUrl+"modele-neptune-plan.jpg",
+            omega: prefixUrl+"modele-omega-plan.jpg",
+            orion: prefixUrl+"modele-orion-plan.jpg",
+            pegase: prefixUrl+"modele-pegase-plan.jpg",
+            pluton: prefixUrl+"modele-pluton-plan.jpg",
+            saturne: prefixUrl+"modele-saturne-rdc.jpg",
+            uranus: prefixUrl+"modele-uranus-plan.jpg",
+            vega: prefixUrl+"modele-vega-plan.jpg",
+            venus: prefixUrl+"modele-venus-plan.jpg" 
+          }
+    
+    
+          const images = {
+            defautImageThumb :  prefixUrl+"aldebaran-mini.jpg",
+            aldebaran: prefixUrl+"aldebaran-mini.jpg",
+            altair : prefixUrl+"altair-mini.jpg",
+            andromede:prefixUrl+"andromede-mini.jpg",
+            antares:prefixUrl+"antares-mini.jpg",
+            aries:prefixUrl+"aries-mini.jpg",
+            capella: prefixUrl+"capella-mini.jpg",
+            jupiter: prefixUrl+"jupiter-mini.jpg",
+            lune: prefixUrl+"lune-mini.jpg",
+            mars: prefixUrl+"mars-mini.jpg",
+            neptune: prefixUrl+"neptune-mini.jpg",
+            omega: prefixUrl+"omega-mini.jpg",
+            orion: prefixUrl+"orion-mini.jpg",
+            pegase: prefixUrl+"pegase-mini.jpg",
+            pluton: prefixUrl+"pluton-mini.jpg",
+            saturne: prefixUrl+"saturne-mini.jpg",
+            uranus: prefixUrl+"uranus-mini.jpg",
+            vega: prefixUrl+"vega-mini.jpg",
+            venus: prefixUrl+"venus-mini.jpg" 
+          }
+        // Modèles avec prix sans le coût du terrain et la taxe associée à celui-ci
+        const modeles = {
+        '--Choisissez votre modèle--': [0,""],
+        'aldebaran 118,42m2 chauffage pac radiateurs': [234247,images.aldebaran,plans.aldebaran],
+        'altair 100,25m2 chauffage poêle': [211724,images.altair,plans.altair],
+        'andromede 125,36m2 chauffage pac radiateurs': [216623,images.andromede,plans.andromede],
+        'antares 152,91m2 chauffage pac radiateurs': [282365,images.antares,plans.antares], 
+          'aries 99,92m2 chauffage poêle': 
+    [207368,images.aries,plans.aries],
+        'capella 83,19m2 chauffage poêle': [169566,images.capella,plans.capella],        
+      
+        'jupiter 133,52m2 chauffage pac radiateurs': [254805,images.jupiter,plans.jupiter],
+        'lune 119,06m2 chauffage pac radiateurs': [227221,images.lune,plans.lune],
+        'mars 85,72m2 chauffage poêle': 
+    [169955,images.mars,plans.mars],
+        //'mercure': [257552,images.mercure],
+        'neptune 74,38m2 chauffage poêle': [174881,images.neptune,plans.neptune],
+        'omega 86,67m2 chauffage poêle': 
+    [185409,images.omega,plans.omega],
+        'orion 151,39m2 chauffage pac radiateurs': [289292,images.orion,plans.orion],
+        'pegase 143,52m2 chauffage pac radiateurs': [255014,images.pegase,plans.pegase],
+        'pluton 86,68m2 chauffage poêle': [181086,images.pluton,plans.pluton],
+        'saturne 102,33m2 chauffage poêle': [192206,images.saturne,plans.saturne],
+        'uranus 76,31m2 chauffage poêle': [164296,images.uranus,plans.uranus],
+        'vega 87,96m2 chauffage poêle': 
+    [183802,images.vega,plans.vega],
+        'venus 98,29 m2 chauffage poêle': 
+    [186725,images.venus,plans.venus]
+        }
+    
+        var stores = {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [125.20535055820244,6.79350350250499],
+                  "zoom": 13.4
+                },
+                "properties": {
+                  "title": "Passenger Name",
+                  "phoneFormatted": "(+33) 65 45 85 45",
+                  "phone": "065458545",
+                  "address": "14400 AGY",
+                  "city": "AGY",
+                  "country": "France",
+                  "postalCode": "14400",
+                  "state": "Calvados.",
+                  "price": "61 200 €",
+                  "size": "463",
+                  "description": "Description here",
+                  "link" :"https://www.annuaire-mairie.fr/mairie-agy-14.html",
+                  "image": images.defautImageThumb
+                }
+              },
+              
+         
+            ]
+          };  
+           
+          if (!('remove' in Element.prototype)) {
+            Element.prototype.remove = function() {
+              if (this.parentNode) {
+                  this.parentNode.removeChild(this);
+              }
+            };
+          }
+         
+          mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0a2FiaXMiLCJhIjoiY2s4NjF6azBoMGNqaDNwbzB1d2FhYjA5cyJ9.V4Mn_wqvfEUVAd42j5dLzg';
+          var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [125.338643225483, 7.0586988367157915],
+            zoom: 10.13,
+            pitch: 60,
+            bearing: -60,
+            scrollZoom: true
+          }); 
+          map.addControl(new mapboxgl.FullscreenControl());//Ajoute le bouton fullscreen
+    map.addControl(new mapboxgl.NavigationControl());
+          var layerList = document.getElementById('menu');
+          var inputs = layerList.getElementsByTagName('input');
+          function switchLayer(layer) {
+            console.log('layer.target.id >> ',layer.target.id);
+              var layerId = layer.target.id;
+              map.setStyle('mapbox://styles/mapbox/' + layerId);
+          }
+          for (var i = 0; i < inputs.length; i++) {
+              inputs[i].onclick = switchLayer;
+          }
+    
+        </script>
+        
+         <script src="https://rawcdn.githack.com/artkabis/toolsWP/8700d2b49d021c513e05c432388fb591e5f1c166/Mapbox/MBStore.js"></script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.1/dist/alpine.min.js" defer></script>
+</html>

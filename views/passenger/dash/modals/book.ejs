@@ -1,0 +1,147 @@
+<!-- settings modal  -->
+<input type="checkbox" id="book-modal" class="modal-toggle">
+<div class="modal">
+    <div class="modal-box relative">
+        <div class="modal-header flex-col items-left">
+            <h3 class="font-semibold text-lg absolute top-2 mt-1">Book a Bus</h3>
+            <label for="book-modal" class="btn btn-circle btn-outline btn-sm absolute right-2 top-2 text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                    class="h-5 w-5">
+                    <path fill-rule="evenodd"
+                        d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </label>
+            <p class="text-sm py-3 mt-3">Reserve for a bus</p>
+        </div>
+        <hr />
+        <div class="">
+            <!-- <h3 class="font-semibold text-lg">Appearence</h3> -->
+
+            <div class="collapse collapse-plus bg-base-200 mt-1">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-sm font-sans">
+                    Pick Up Location
+                </div>
+                <div class="collapse-content">
+                    <div class="relative">
+                        <input type="email" id="hs-floating-input-email" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                        focus:pt-6
+                        focus:pb-2
+                        [&:not(:placeholder-shown)]:pt-6
+                        [&:not(:placeholder-shown)]:pb-2
+                        autofill:pt-6
+                        autofill:pb-2" placeholder="you@email.com">
+                        <label for="hs-floating-input-email" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:translate-x-0.5
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:translate-x-0.5
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Pick Up Location</label>
+                      </div>
+                </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-base-200 mt-1 mb-2">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-sm font-sans">
+                    Drop Location
+                </div>
+                <div class="collapse-content">
+                    <div class="relative">
+                        <input type="text" id="hs-floating-input-email" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                        focus:pt-6
+                        focus:pb-2
+                        [&:not(:placeholder-shown)]:pt-6
+                        [&:not(:placeholder-shown)]:pb-2
+                        autofill:pt-6
+                        autofill:pb-2" placeholder="you@email.com">
+                        <label for="hs-floating-input-email" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:translate-x-0.5
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:translate-x-0.5
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Drop Location</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-base-200 mt-1 mb-2">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-sm font-sans">
+                    Additional Options
+                </div>
+                <div class="collapse-content">
+                   
+                    <div class="relative">
+                        <input type="text" id="hs-floating-input-email" class="peer p-4 block w-full rounded-lg text-sm placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none
+                        focus:pt-6
+                        focus:pb-2
+                        [&:not(:placeholder-shown)]:pt-6
+                        [&:not(:placeholder-shown)]:pb-2
+                        autofill:pt-6
+                        autofill:pb-2" value="<%= currentTime %>" readonly>
+                        <label class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:translate-x-0.5
+                          peer-focus:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:translate-x-0.5
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Date and Time</label>
+                    </div>
+        
+                    <div class="relative mt-2">
+                        <input type="text" id="hs-floating-input-email" class="peer p-4 block w-full rounded-lg text-sm placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none
+                        focus:pt-6
+                        focus:pb-2
+                        [&:not(:placeholder-shown)]:pt-6
+                        [&:not(:placeholder-shown)]:pb-2
+                        autofill:pt-6
+                        autofill:pb-2" value="12 Km" readonly>
+                        <label class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:translate-x-0.5
+                          peer-focus:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:translate-x-0.5
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Distance</label>
+                    </div>
+        
+                    <div class="relative mt-2">
+                        <input type="text" id="hs-floating-input-email" class="peer p-4 block w-full rounded-lg text-sm placeholder:text-transparent disabled:opacity-50 disabled:pointer-events-none
+                        focus:pt-6
+                        focus:pb-2
+                        [&:not(:placeholder-shown)]:pt-6
+                        [&:not(:placeholder-shown)]:pb-2
+                        autofill:pt-6
+                        autofill:pb-2" value="150.00 Php" readonly>
+                        <label class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:translate-x-0.5
+                          peer-focus:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:translate-x-0.5
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Estimated Fare</label>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="m-3"/>
+            <div class="flex float-right top-2">
+                <button class="btn btn-sm m-1 bg-blue-500 text-white">Book Now!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end settings modal  -->

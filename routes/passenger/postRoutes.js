@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const validator = require('validator')
-const ratelimit = require('express-rate-limit');;
+const ratelimit = require('express-rate-limit');
 const admin = require("firebase-admin");
 const dotenv = require('dotenv');
 dotenv.config({ path: '.env' });
@@ -81,7 +81,7 @@ router.post('/login', limiter, validateLogin, async (req, res) => {
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.render('passenger/login', { errors: errors.array(), invalid: false, session: req.session });
+            return res.render('passenger/auth/login', { errors: errors.array(), invalid: false, session: req.session });
         }
         // let fetchData, fetchdocID;
         // const pemail = await db.collection('passengers').where('email', '==', email).get();
@@ -97,10 +97,11 @@ router.post('/login', limiter, validateLogin, async (req, res) => {
         });
 
         const uid = await AuthSignIn(email, password);
-        return res.send(uid);
+        res.cookie('uid', uid);
+        res.redirect('/app/dashboard');
 
     } catch (error) {
-        return res.render('passenger/login', { errors: [], invalid: true, session: req.session });
+        return res.render('passenger/auth/login', { errors: [], invalid: true, session: req.session });
 
     }
 

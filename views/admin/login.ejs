@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="icon" href="/images/favicon.svg">
 
     <!-- <link rel="stylesheet" href="/online/css/daisyui.css"> -->
-    <title>Login | MBTrack</title>
+    <title>Login | TrackMOn</title>
 </head>
+
 <body>
     <div class="h-screen">
         <div class="flex justify-center py-20 items-center bg-white">
@@ -23,7 +25,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                     </svg>
-                    <input class="pl-2 outline-none border-none" type="text" name="" id=""
+                    <input class="pl-2 outline-none border-none" type="text" name="username" id=""
                         placeholder="Email Address" />
                 </div>
                 <div class="flex items-center border-2 py-2 px-3 rounded-2xl" x-data="{ showPass: true }">
@@ -33,11 +35,11 @@
                             d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
                             clip-rule="evenodd" />
                     </svg>
-                    <input class="pl-2 outline-none border-none" :type="showPass ? 'password' : 'text'" name=""
+                    <input class="pl-2 outline-none border-none" :type="showPass ? 'password' : 'text'" name="password"
                         id="password" placeholder="Password" />
-                    <div class="ml-6 items-center text-sm leading-5 cursor-pointer">
+                    <div class="ml-10 items-center text-sm leading-5 cursor-pointer">
                         <p class="text-gray-400 font-semibold" @click="showPass = !showPass"
-                            x-text="showPass ? 'Hide' : 'Show'">Show
+                            x-text="showPass ? 'Show' : 'Hide'">Show
                         </p>
                     </div>
                 </div>
@@ -53,4 +55,5 @@
     </div>
 </body>
 <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+
 </html>

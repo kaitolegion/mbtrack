@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/online/css/tailwind.css">
+    <link rel="icon" href="/images/favicon.svg">
+
+    <!-- <link rel="stylesheet" href="/online/css/daisyui.css"> -->
+    <title>Upload ID | TrackMOn</title>
+</head>
+<body>
+    <div class="h-screen md:flex">
+        <div
+            class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-900 to-purple-700 i justify-around items-center hidden">
+
+            <%- include('../partials/title') -%>
+
+            <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8">
+            </div>
+            <div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8">
+            </div>
+            <div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+            <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+        </div>
+        <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
+            <form class="bg-white" method="POST">
+                <h1 class="text-gray-800 font-bold text-2xl mb-1">Upload ID!</h1>
+                <p class="text-sm font-normal text-gray-600 mb-7">Upload a valid ID document (e.g. passport, driver's license, national ID) <br>to verify your identity and ensure secure travel.</p>
+
+               
+                    <div class="max-w-lg mx-auto">
+                        <input class="block w-full py-2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file">
+                        <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">Upload Identification Picture: (jpg, png, jpeg)</div>
+                    </div>
+                 
+
+                <button type="submit"
+                    class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Upload</button>
+
+                <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer float-right mb-2"><a href="/app/login">Go
+                        back to login</a></span>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+<script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+</html>

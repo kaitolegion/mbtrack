@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <link rel="icon" href="/images/favicon.svg">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.4.2/dist/full.css" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <title>Dashboard | Super Admin</title>
+</head>
+
+<body>
+   <%- include('partials/navbar') -%>
+      <%- include('partials/sidebar') -%>
+
+         <% if (request.originalUrl==='/admin/dashboard' ) { %>
+            <%- include('content/dashboard') -%>
+               <% }%>
+
+                  <% if (request.originalUrl==='/admin/dashboard/passengers' ) { %>
+                     <%- include('content/managepassenger') -%>
+                        <% }%>
+
+                           <% if (request.originalUrl==='/admin/dashboard/drivers' ) { %>
+                              <%- include('content/managedriver') -%>
+                                 <% }%>
+
+                                    <% if (request.originalUrl==='/admin/dashboard/bustracking' ) { %>
+                                       <%- include('content/bustracking') -%>
+                                          <% }%>
+
+                                             <% if (request.originalUrl==='/admin/dashboard/routes' ) { %>
+                                                <%- include('content/busroute') -%>
+                                                   <% }%>
+
+                                                      <% if (request.originalUrl==='/admin/dashboard/managebuses' ) { %>
+                                                         <%- include('content/managebus') -%>
+                                                            <% }%>
+
+                                                               <% if (request.originalUrl==='/admin/profile' ) { %>
+                                                                  <%- include('content/profile') -%>
+                                                                     <% }%>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.1/dist/alpine.min.js" defer></script>
+
+</html>

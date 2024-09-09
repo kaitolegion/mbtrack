@@ -10,11 +10,11 @@ router.get('/', (req, res) => {
 });
   
 router.get('/login', (req, res) => {
-    res.render('./driver/login');
+    res.render('./driver/auth/login');
 });
 
 router.get('/dashboard', (req, res) => {
-    res.send('dashboard');
+    res.render('./driver/dash/index');
 });
 
 module.exports = router;

@@ -6,11 +6,23 @@
     <link rel="icon" href="/images/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/online/css/daisyui.css">
-    <link rel="stylesheet" href="/online/css/leaflet.css">
-    <link href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/online/js/leaflet.js">
+    <!-- <link rel="stylesheet" href="/online/css/leaflet.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.2/dist/leaflet.css" />
+    <!-- <link href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" rel="stylesheet" /> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.81.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.81.0/dist/L.Control.Locate.min.css" rel="stylesheet">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="/local/css/styles.css">
-    <title>Dashboard | MBTrack</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <style>
+        #map {
+            height: 100vh;
+        }
+    </style> -->
+    <title>Dashboard | TrackMOn</title>
 </head>
 <body>
 
@@ -23,15 +35,13 @@
 
 
         <%- include('map') -%>
-            <div class="drawer-side">
-                <label for="notification-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-                <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
 
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
-                </ul>
-            </div>
+        <!-- <div id="map" class="z-0"></div>  -->
 
+
+        <%- include('../partials/notification') -%>
+
+           
     </div>
 
     <!-- <div class="drawer drawer-end">
@@ -57,19 +67,28 @@
 
             </div> -->
 
-
+            <%- include('../partials/bottom_nav') -%>
 
     <!-- MODALs  -->
     <%- include('modals/logout') -%>
         <%- include('modals/search') -%>
             <%- include('modals/profile') -%>
                 <%- include('modals/setting') -%>
+                    <%- include('modals/book') -%>
                     <!-- end MODALs  -->
 </body>
 
-<script src="https://unpkg.com/leaflet-rotate@0.2.8/dist/leaflet-rotate-src.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js"></script>
+<script src="https://domoritz.github.io/leaflet-locatecontrol/src/L.Control.Locate.js"></script>
+
+<!-- <script src="https://unpkg.com/leaflet-rotate@0.2.8/dist/leaflet-rotate-src.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
-<script src="https://unpkg.com/leaflet-rotatedmarker/dist/rotatedMarker.js"></script>
+<script src="https://unpkg.com/leaflet-rotatedmarker/dist/rotatedMarker.js"></script> -->
+
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.1/dist/alpine.min.js" defer></script>
-<script src="/local/js/map.js"></script>
+
+<script src="/local/passenger/js/map.js"></script>
+
+
+<script src="/local/passenger/js/logout.js"></script>
 </html>

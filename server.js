@@ -6,8 +6,6 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
-const uuid = require('uuid');
-
 dotenv.config({ path: '.env' });
 
 
