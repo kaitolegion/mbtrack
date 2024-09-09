@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 
 // middleware
-const {isAuthenticatedPassenger, checkAuthPassenger} = require('./middlewares'); 
+const { isAuthenticatedPassenger, checkAuthPassenger } = require('./middlewares');
 // end
 
 
