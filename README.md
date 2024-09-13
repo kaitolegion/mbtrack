@@ -5,8 +5,14 @@ MUST BE DEVELOPED AND DONE END OF OCTOBER
 USAGE OF THE SYSTEM
 
 - start the system
-
-npm i && npm start
+To install the required libraries
+`sh
+npm i
+`
+To start the system
+`sh
+npm start
+`
 
 - to access the super admin
 /admin/login   ->   authenticate here 
