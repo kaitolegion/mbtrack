@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 dotenv.config({ path: '.env' });
 
-
 const passengerGetRoutes = require('./routes/passenger/getRoutes');
 const passengerPostRoutes = require('./routes/passenger/postRoutes');
 const driverGetRoutes = require('./routes/driver/getRoutes');
