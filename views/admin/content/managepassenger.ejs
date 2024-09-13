@@ -1,39 +1,534 @@
-
 <div class="p-4 sm:ml-64">
-
 
     <!-- Breadcrumb Start -->
     <div class="mb-6 mt-16 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-           <h2 class="text-xl font-bold text-gray-800">
-           Manage Passengers
-           </h2>
-    <nav>
-      <ol class="flex items-center gap-2">
-        <li>
-          <a class="font-medium" href="index.html">Dashboard /</a>
-        </li>
-        <li class="font-medium text-gray-400">passengers</li>
-      </ol>
-    </nav>
+        <h2 class="text-xl font-bold text-gray-800">
+            Manage Passengers
+        </h2>
+        <nav>
+            <ol class="flex items-center gap-2">
+                <li>
+                    <a class="font-medium" href="index.html">Dashboard /</a>
+                </li>
+                <li class="font-medium text-gray-400">passengers</li>
+            </ol>
+        </nav>
 
-   </div>
-   <!-- Breadcrumb End -->
-   
-   
-   
-       <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-4">
+    </div>
+    <!-- Breadcrumb End -->
+
+
+
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-4">
+
 
         <div class="flex flex-col gap-2 sm:flex-row">
             <div class="items-center py-2">
-                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-searcg" type="text" placeholder="Search">
+                <input id="searching"
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    id="inline-searcg" type="text" placeholder="Search">
             </div>
             <div class="flex items-center py-2">
-                <a href="" class="inline-block px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline">
-                  Add passenger
+                <a href=""
+                    class="inline-block px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline">
+                    Add passenger
                 </a>
-              </div>
+            </div>
         </div>
-       
+
+        <table id="dataTable" class="display nowrap" class="min-w-full leading-normal" width="100%">
+            <thead>
+                <tr>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Position</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Office</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Age</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Start date</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Salary</th>
+                </tr>
+            </thead>
+
+
+
+            <tbody>
+                <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$3,120</td>
+                </tr>
+                <tr>
+                    <td>Garrett Winters</td>
+                    <td>Director</td>
+                    <td>Edinburgh</td>
+                    <td>63</td>
+                    <td>2011/07/25</td>
+                    <td>$5,300</td>
+                </tr>
+                <tr>
+                    <td>Ashton Cox</td>
+                    <td>Technical Author</td>
+                    <td>San Francisco</td>
+                    <td>66</td>
+                    <td>2009/01/12</td>
+                    <td>$4,800</td>
+                </tr>
+                <tr>
+                    <td>Cedric Kelly</td>
+                    <td>Javascript Developer</td>
+                    <td>Edinburgh</td>
+                    <td>22</td>
+                    <td>2012/03/29</td>
+                    <td>$3,600</td>
+                </tr>
+                <tr>
+                    <td>Jenna Elliott</td>
+                    <td>Financial Controller</td>
+                    <td>Edinburgh</td>
+                    <td>33</td>
+                    <td>2008/11/28</td>
+                    <td>$5,300</td>
+                </tr>
+                <tr>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td>61</td>
+                    <td>2012/12/02</td>
+                    <td>$4,525</td>
+                </tr>
+                <tr>
+                    <td>Herrod Chandler</td>
+                    <td>Sales Assistant</td>
+                    <td>San Francisco</td>
+                    <td>59</td>
+                    <td>2012/08/06</td>
+                    <td>$4,080</td>
+                </tr>
+                <tr>
+                    <td>Rhona Davidson</td>
+                    <td>Integration Specialist</td>
+                    <td>Edinburgh</td>
+                    <td>55</td>
+                    <td>2010/10/14</td>
+                    <td>$6,730</td>
+                </tr>
+                <tr>
+                    <td>Colleen Hurst</td>
+                    <td>Javascript Developer</td>
+                    <td>San Francisco</td>
+                    <td>39</td>
+                    <td>2009/09/15</td>
+                    <td>$5,000</td>
+                </tr>
+                <tr>
+                    <td>Sonya Frost</td>
+                    <td>Software Engineer</td>
+                    <td>Edinburgh</td>
+                    <td>23</td>
+                    <td>2008/12/13</td>
+                    <td>$3,600</td>
+                </tr>
+                <tr>
+                    <td>Jena Gaines</td>
+                    <td>System Architect</td>
+                    <td>London</td>
+                    <td>30</td>
+                    <td>2008/12/19</td>
+                    <td>$5,000</td>
+                </tr>
+                <tr>
+                    <td>Quinn Flynn</td>
+                    <td>Financial Controller</td>
+                    <td>Edinburgh</td>
+                    <td>22</td>
+                    <td>2013/03/03</td>
+                    <td>$4,200</td>
+                </tr>
+                <tr>
+                    <td>Charde Marshall</td>
+                    <td>Regional Director</td>
+                    <td>San Francisco</td>
+                    <td>36</td>
+                    <td>2008/10/16</td>
+                    <td>$5,300</td>
+                </tr>
+                <tr>
+                    <td>Haley Kennedy</td>
+                    <td>Senior Marketing Designer</td>
+                    <td>London</td>
+                    <td>43</td>
+                    <td>2012/12/18</td>
+                    <td>$4,800</td>
+                </tr>
+                <tr>
+                    <td>Tatyana Fitzpatrick</td>
+                    <td>Regional Director</td>
+                    <td>London</td>
+                    <td>19</td>
+                    <td>2010/03/17</td>
+                    <td>$2,875</td>
+                </tr>
+                <tr>
+                    <td>Michael Silva</td>
+                    <td>Senior Marketing Designer</td>
+                    <td>London</td>
+                    <td>66</td>
+                    <td>2012/11/27</td>
+                    <td>$3,750</td>
+                </tr>
+                <tr>
+                    <td>Paul Byrd</td>
+                    <td>Javascript Developer</td>
+                    <td>New York</td>
+                    <td>64</td>
+                    <td>2010/06/09</td>
+                    <td>$5,000</td>
+                </tr>
+                <tr>
+                    <td>Gloria Little</td>
+                    <td>Systems Administrator</td>
+                    <td>New York</td>
+                    <td>59</td>
+                    <td>2009/04/10</td>
+                    <td>$3,120</td>
+                </tr>
+                <tr>
+                    <td>Bradley Greer</td>
+                    <td>Software Engineer</td>
+                    <td>London</td>
+                    <td>41</td>
+                    <td>2012/10/13</td>
+                    <td>$3,120</td>
+                </tr>
+                <tr>
+                    <td>Dai Rios</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>35</td>
+                    <td>2012/09/26</td>
+                    <td>$4,200</td>
+                </tr>
+                <tr>
+                    <td>Jenette Caldwell</td>
+                    <td>Financial Controller</td>
+                    <td>New York</td>
+                    <td>30</td>
+                    <td>2011/09/03</td>
+                    <td>$4,965</td>
+                </tr>
+                <tr>
+                    <td>Yuri Berry</td>
+                    <td>System Architect</td>
+                    <td>New York</td>
+                    <td>40</td>
+                    <td>2009/06/25</td>
+                    <td>$3,600</td>
+                </tr>
+                <tr>
+                    <td>Caesar Vance</td>
+                    <td>Technical Author</td>
+                    <td>New York</td>
+                    <td>21</td>
+                    <td>2011/12/12</td>
+                    <td>$4,965</td>
+                </tr>
+                <tr>
+                    <td>Doris Wilder</td>
+                    <td>Sales Assistant</td>
+                    <td>Edinburgh</td>
+                    <td>23</td>
+                    <td>2010/09/20</td>
+                    <td>$4,965</td>
+                </tr>
+                <tr>
+                    <td>Angelica Ramos</td>
+                    <td>System Architect</td>
+                    <td>London</td>
+                    <td>36</td>
+                    <td>2009/10/09</td>
+                    <td>$2,875</td>
+                </tr>
+                <tr>
+                    <td>Gavin Joyce</td>
+                    <td>Developer</td>
+                    <td>Edinburgh</td>
+                    <td>42</td>
+                    <td>2010/12/22</td>
+                    <td>$4,525</td>
+                </tr>
+                <tr>
+                    <td>Jennifer Chang</td>
+                    <td>Regional Director</td>
+                    <td>London</td>
+                    <td>28</td>
+                    <td>2010/11/14</td>
+                    <td>$4,080</td>
+                </tr>
+                <tr>
+                    <td>Brenden Wagner</td>
+                    <td>Software Engineer</td>
+                    <td>San Francisco</td>
+                    <td>18</td>
+                    <td>2011/06/07</td>
+                    <td>$3,750</td>
+                </tr>
+                <tr>
+                    <td>Ebony Grimes</td>
+                    <td>Software Engineer</td>
+                    <td>San Francisco</td>
+                    <td>48</td>
+                    <td>2010/03/11</td>
+                    <td>$2,875</td>
+                </tr>
+                <tr>
+                    <td>Russell Chavez</td>
+                    <td>Director</td>
+                    <td>Edinburgh</td>
+                    <td>20</td>
+                    <td>2011/08/14</td>
+                    <td>$3,600</td>
+                </tr>
+                <tr>
+                    <td>Michelle House</td>
+                    <td>Integration Specialist</td>
+                    <td>Edinburgh</td>
+                    <td>37</td>
+                    <td>2011/06/02</td>
+                    <td>$3,750</td>
+                </tr>
+                <tr>
+                    <td>Suki Burks</td>
+                    <td>Developer</td>
+                    <td>London</td>
+                    <td>53</td>
+                    <td>2009/10/22</td>
+                    <td>$2,875</td>
+                </tr>
+                <tr>
+                    <td>Prescott Bartlett</td>
+                    <td>Technical Author</td>
+                    <td>London</td>
+                    <td>27</td>
+                    <td>2011/05/07</td>
+                    <td>$6,730</td>
+                </tr>
+                <tr>
+                    <td>Gavin Cortez</td>
+                    <td>Technical Author</td>
+                    <td>San Francisco</td>
+                    <td>22</td>
+                    <td>2008/10/26</td>
+                    <td>$6,730</td>
+                </tr>
+                <tr>
+                    <td>Martena Mccray</td>
+                    <td>Integration Specialist</td>
+                    <td>Edinburgh</td>
+                    <td>46</td>
+                    <td>2011/03/09</td>
+                    <td>$4,080</td>
+                </tr>
+                <tr>
+                    <td>Unity Butler</td>
+                    <td>Senior Marketing Designer</td>
+                    <td>San Francisco</td>
+                    <td>47</td>
+                    <td>2009/12/09</td>
+                    <td>$3,750</td>
+                </tr>
+                <tr>
+                    <td>Howard Hatfield</td>
+                    <td>Financial Controller</td>
+                    <td>San Francisco</td>
+                    <td>51</td>
+                    <td>2008/12/16</td>
+                    <td>$4,080</td>
+                </tr>
+                <tr>
+                    <td>Hope Fuentes</td>
+                    <td>Financial Controller</td>
+                    <td>San Francisco</td>
+                    <td>41</td>
+                    <td>2010/02/12</td>
+                    <td>$4,200</td>
+                </tr>
+                <tr>
+                    <td>Vivian Harrell</td>
+                    <td>System Architect</td>
+                    <td>San Francisco</td>
+                    <td>62</td>
+                    <td>2009/02/14</td>
+                    <td>$4,965</td>
+                </tr>
+                <tr>
+                    <td>Timothy Mooney</td>
+                    <td>Financial Controller</td>
+                    <td>London</td>
+                    <td>37</td>
+                    <td>2008/12/11</td>
+                    <td>$4,200</td>
+                </tr>
+                <tr>
+                    <td>Jackson Bradshaw</td>
+                    <td>Director</td>
+                    <td>New York</td>
+                    <td>65</td>
+                    <td>2008/09/26</td>
+                    <td>$5,000</td>
+                </tr>
+                <tr>
+                    <td>Miriam Weiss</td>
+                    <td>Support Engineer</td>
+                    <td>Edinburgh</td>
+                    <td>64</td>
+                    <td>2011/02/03</td>
+                    <td>$4,965</td>
+                </tr>
+                <tr>
+                    <td>Bruno Nash</td>
+                    <td>Software Engineer</td>
+                    <td>London</td>
+                    <td>38</td>
+                    <td>2011/05/03</td>
+                    <td>$4,200</td>
+                </tr>
+                <tr>
+                    <td>Odessa Jackson</td>
+                    <td>Support Engineer</td>
+                    <td>Edinburgh</td>
+                    <td>37</td>
+                    <td>2009/08/19</td>
+                    <td>$3,600</td>
+                </tr>
+                <tr>
+                    <td>Thor Walton</td>
+                    <td>Developer</td>
+                    <td>New York</td>
+                    <td>61</td>
+                    <td>2013/08/11</td>
+                    <td>$3,600</td>
+                </tr>
+                <tr>
+                    <td>Finn Camacho</td>
+                    <td>Support Engineer</td>
+                    <td>San Francisco</td>
+                    <td>47</td>
+                    <td>2009/07/07</td>
+                    <td>$4,800</td>
+                </tr>
+                <tr>
+                    <td>Elton Baldwin</td>
+                    <td>Data Coordinator</td>
+                    <td>Edinburgh</td>
+                    <td>64</td>
+                    <td>2012/04/09</td>
+                    <td>$6,730</td>
+                </tr>
+                <tr>
+                    <td>Zenaida Frank</td>
+                    <td>Software Engineer</td>
+                    <td>New York</td>
+                    <td>63</td>
+                    <td>2010/01/04</td>
+                    <td>$4,800</td>
+                </tr>
+                <tr>
+                    <td>Zorita Serrano</td>
+                    <td>Software Engineer</td>
+                    <td>San Francisco</td>
+                    <td>56</td>
+                    <td>2012/06/01</td>
+                    <td>$5,300</td>
+                </tr>
+                <tr>
+                    <td>Jennifer Acosta</td>
+                    <td>Javascript Developer</td>
+                    <td>Edinburgh</td>
+                    <td>43</td>
+                    <td>2013/02/01</td>
+                    <td>$2,875</td>
+                </tr>
+                <tr>
+                    <td>Cara Stevens</td>
+                    <td>Sales Assistant</td>
+                    <td>New York</td>
+                    <td>46</td>
+                    <td>2011/12/06</td>
+                    <td>$4,800</td>
+                </tr>
+                <tr>
+                    <td>Hermione Butler</td>
+                    <td>Director</td>
+                    <td>London</td>
+                    <td>47</td>
+                    <td>2011/03/21</td>
+                    <td>$4,080</td>
+                </tr>
+                <tr>
+                    <td>Lael Greer</td>
+                    <td>Systems Administrator</td>
+                    <td>London</td>
+                    <td>21</td>
+                    <td>2009/02/27</td>
+                    <td>$3,120</td>
+                </tr>
+                <tr>
+                    <td>Jonas Alexander</td>
+                    <td>Developer</td>
+                    <td>San Francisco</td>
+                    <td>30</td>
+                    <td>2010/07/14</td>
+                    <td>$5,300</td>
+                </tr>
+                <tr>
+                    <td>Shad Decker</td>
+                    <td>Regional Director</td>
+                    <td>Edinburgh</td>
+                    <td>51</td>
+                    <td>2008/11/13</td>
+                    <td>$5,300</td>
+                </tr>
+                <tr>
+                    <td>Michael Bruce</td>
+                    <td>Javascript Developer</td>
+                    <td>Edinburgh</td>
+                    <td>29</td>
+                    <td>2011/06/27</td>
+                    <td>$4,080</td>
+                </tr>
+                <tr>
+                    <td>Donna Snider</td>
+                    <td>System Architect</td>
+                    <td>New York</td>
+                    <td>27</td>
+                    <td>2011/01/25</td>
+                    <td>$3,120</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <!-- <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-4">
+
+        <div class="flex flex-col gap-2 sm:flex-row">
+            <div class="items-center py-2">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    id="inline-searcg" type="text" placeholder="Search">
+            </div>
+            <div class="flex items-center py-2">
+                <a href=""
+                    class="inline-block px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline">
+                    Add passenger
+                </a>
+            </div>
+        </div>
+
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
                 <table class="min-w-full leading-normal">
@@ -60,8 +555,8 @@
                                 Status
                             </th>
                             <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Action
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Action
                             </th>
                         </tr>
                     </thead>
@@ -104,24 +599,39 @@
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <div class="relative px-5 pt-2">
-                                    <button class="focus:ring-2 rounded-md focus:outline-none" onclick="dropdownFunction(this)" role="button" aria-label="option">
-                                        <svg class="dropbtn" onclick="dropdownFunction(this)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            <path d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <button class="focus:ring-2 rounded-md focus:outline-none"
+                                        onclick="dropdownFunction(this)" role="button" aria-label="option">
+                                        <svg class="dropbtn" onclick="dropdownFunction(this)"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z"
+                                                stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z"
+                                                stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z"
+                                                stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
                                         </svg>
                                     </button>
-                                    <div class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden">
-                                        <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                    <div
+                                        class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden">
+                                        <div tabindex="0"
+                                            class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                                             <p>Edit</p>
                                         </div>
-                                        <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                        <div tabindex="0"
+                                            class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                                             <p>Delete</p>
                                         </div>
                                     </div>
                                 </div>
 
-                                   
+
                             </td>
                         </tr>
                         <tr>
@@ -161,9 +671,12 @@
                                 </span>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Edit</a>
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">View</a>
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Delete</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Edit</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">View</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -203,9 +716,12 @@
                                 </span>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Edit</a>
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">View</a>
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Delete</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Edit</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">View</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -235,24 +751,55 @@
                                 <p class="text-gray-900 whitespace-no-wrap">Jan 18, 2020</p>
                             </td>
                             <td class="px-5 py-5 bg-white text-sm">
-                                <span
-                                    class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
+                                <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                     <span aria-hidden
                                         class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
                                     <span class="relative">Not Verified</span>
                                 </span>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Edit</a>
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">View</a>
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Delete</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Edit</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">View</a>
+                                <a href="#"
+                                    class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Delete</a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-               
+
             </div>
         </div>
-   
-       </div>
-   </div>
+
+    </div> -->
+
+</div>
+
+<script>
+
+
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            "lengthChange": false,
+            "ordering": false,
+            "sDom": "ltipr",
+            "bInfo": false,
+            lengthMenu: [[10, 10, 20, -1], [10, 10, 20, 'Todos']],
+            "order": [
+                [1, 'asc']
+            ]
+        });
+
+
+        var table = $('#dataTable').DataTable();
+        // search outside from datatables
+        $('#searching').on('keyup change', function () {
+            table.search(this.value).draw();
+        });
+        // pagination outside from datatables
+        $("#dataTable_paginate").appendTo("#pagination");
+
+    });
+
+</script>

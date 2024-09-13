@@ -6,7 +6,7 @@ USAGE OF THE SYSTEM
 
 - start the system
 
-To install the required libraries
+- To install the required libraries
 `
 npm i
 `
@@ -16,10 +16,14 @@ npm start
 `
 
 - to access the super admin
-/admin/login   ->   authenticate here 
+`
+/admin/login
+`   ->   authenticate here 
 
 - to access the passenger
-/app/login   ->   
+`
+/app/login
+`   ->   
 
 LIST OF ISSUES
 
@@ -42,3 +46,5 @@ SOURCE VIDEOS
 
 - DataTables Server side handles big data within few seconds
 - https://www.youtube.com/watch?v=1Ks7_Dwnpb0
+- Example of Super Admin Page
+- https://www.youtube.com/watch?v=KAgK55EfLCs
